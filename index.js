@@ -4,14 +4,9 @@ const crypto = require("crypto");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const SCOPES = [
-  "launch",
-  "openid",
-  "fhirUser",
-  "patient/Patient.read",
-  "patient/Encounter.read",
-  "patient/Observation.read"
-].join(" ");
+const SCOPES =
+  "launch/patient openid fhirUser online_accessoffline_access patient/Patient.read";
+
 
 // 🔑 CONFIG (replace if needed)
 const CLIENT_ID = "nd-QGxWI9TjqSC4B4IlzJAdxc0yY9BOuJSmENtVSVC8";
