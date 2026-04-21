@@ -4,44 +4,14 @@ const crypto = require("crypto");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const SCOPES = `
-launch openid fhirUser offline_access
-patient/AllergyIntolerance.read
-patient/Binary.read
-patient/CarePlan.read
-patient/CareTeam.read
-patient/Condition.read
-patient/Coverage.read
-patient/Device.read
-patient/DiagnosticReport.read
-patient/DocumentReference.read
-patient/Encounter.read
-patient/FamilyMemberHistory.read
-patient/Goal.read
-patient/Immunization.read
-patient/Location.read
-patient/Media.read
-patient/Medication.read
-patient/MedicationAdministration.read
-patient/MedicationDispense.read
-patient/MedicationRequest.read
-patient/Observation.read
-patient/Organization.read
-patient/Patient.read
-patient/Practitioner.read
-patient/PractitionerRole.read
-patient/Procedure.read
-patient/Provenance.read
-patient/QuestionnaireResponse.read
-patient/RelatedPerson.read
-patient/ServiceRequest.read
-patient/Specimen.read
-user/AllergyIntolerance.read
-user/Basic.read
-user/Binary.read
-user/CarePlan.read
-user/CareTeam.read
-`.replace(/\s+/g, " ").trim();
+const SCOPES = [
+  "launch",
+  "openid",
+  "fhirUser",
+  "patient/Patient.read",
+  "patient/Encounter.read",
+  "patient/Observation.read"
+].join(" ");
 
 // 🔑 CONFIG (replace if needed)
 const CLIENT_ID = "nd-QGxWI9TjqSC4B4IlzJAdxc0yY9BOuJSmENtVSVC8";
