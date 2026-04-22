@@ -90,22 +90,25 @@ app.get("/callback", async (req, res) => {
 
   try {
     // 🔁 Exchange code for token
-    const tokenResponse = await axios.post(
-      TOKEN_URL,
-      new URLSearchParams({
-        grant_type: "authorization_code",
-        code: code,
-        redirect_uri: REDIRECT_URI,
-        client_id: CLIENT_ID,
-        client_secret: CLIENT_SECRET, // 🔥 ADD THIS
-        code_verifier: session.code_verifier,
-      }),
-      {
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-      },
-    );
+    // 🔐 Create Basic Auth header for confidential app
+const basicAuth = Buffer.from(`${CLIENT_ID}:${CLIENT_SECRET}`).toString("base64");
+
+const tokenResponse = await axios.post(
+  TOKEN_URL,
+  new URLSearchParams({
+    grant_type: "authorization_code",
+    code,
+    redirect_uri: REDIRECT_URI,
+    code_verifier: session.code_verifier,
+  }),
+  {
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+      Authorization: `Basic ${basicAuth}`,
+    },
+  }
+);
+
     console.log("Token Response:", tokenResponse.data);
 
     const { access_token, patient } = tokenResponse.data;
