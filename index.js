@@ -57,9 +57,9 @@ app.get("/", (req, res) => {
     `&client_id=${CLIENT_ID}` +
     `&redirect_uri=${encodeURIComponent(REDIRECT_URI)}` +
     `&scope=${encodeURIComponent(SCOPES)}` +
-    `&launch=${launch}` +
-    `&aud=${iss}` +
     `&state=${state}` +
+    `&aud=${iss}` +
+    `&launch=${launch}` +
     `&code_challenge=${code_challenge}` +
     `&code_challenge_method=S256`;
 
