@@ -4,7 +4,7 @@ const crypto = require("crypto");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const SCOPES = "launch openid fhirUser online_access offline_access user/Encounter.read";
+const SCOPES = "offline_access user/Encounter.read";
 
 // 🔑 CONFIG (replace if needed)
 const CLIENT_ID = "nd-QGxWI9TjqSC4B4IlzJAdxc0yY9BOuJSmENtVSVC8";
