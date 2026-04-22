@@ -4,7 +4,8 @@ const crypto = require("crypto");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const SCOPES = "offline_access user/Encounter.read";
+const SCOPES = "offline_access patient/AllergyIntolerance.read patient/CareTeam.read patient/Device.read patient/Encounter.read patient/Immunization.read patient/Medication.read patient/MedicationRequest.read patient/Patient.read patient/Procedure.read patient/RelatedPerson.read patient/Binary.read patient/Condition.read patient/DiagnosticReport.read patient/FamilyMemberHistory.read patient/Location.read patient/MedicationAdministration.read patient/Observation.read patient/Practitioner.read patient/Provenance.read patient/ServiceRequest.read patient/CarePlan.read patient/Coverage.read patient/DocumentReference.read patient/Goal.read patient/Media.read patient/MedicationDispense.read patient/Organization.read patient/PractitionerRole.read patient/QuestionnaireResponse.read patient/Specimen.read user/AllergyIntolerance.read user/CarePlan.read user/Coverage.read user/DocumentReference.read user/Goal.read user/Media.read user/MedicationDispense.read user/Organization.read user/PractitionerRole.read user/Questionnaire.read user/ServiceRequest.read user/Basic.read user/CareTeam.read user/Device.read user/Encounter.read user/Immunization.read user/Medication.read user/MedicationRequest.read user/Patient.read user/Procedure.read user/QuestionnaireResponse.read user/Specimen.read user/Binary.read user/Condition.read user/DiagnosticReport.read user/FamilyMemberHistory.read user/Location.read user/MedicationAdministration.read user/Observation.read user/Practitioner.read user/Provenance.read user/RelatedPerson.read";
+
 
 // 🔑 CONFIG (replace if needed)
 const CLIENT_ID = "nd-QGxWI9TjqSC4B4IlzJAdxc0yY9BOuJSmENtVSVC8";
