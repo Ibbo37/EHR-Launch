@@ -5,7 +5,7 @@ const crypto = require("crypto");
 const app = express();
 const PORT = process.env.PORT || 3000;
 const SCOPES =
-  "launch/patient openid fhirUser online_accessoffline_access patient/Patient.read";
+  "launch openid fhirUser online_access offline_access patient/Patient.read";
 
 
 // 🔑 CONFIG (replace if needed)
